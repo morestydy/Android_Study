@@ -31,7 +31,19 @@
         android:layout_height="200dp"
         android:orientation="horizontal"
         android:background="#0066FF"
-        android:layout_marginTop="20dp">
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center_horizontal">
+        <View
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:background="#ff0033"
+            android:layout_weight="1"/> //权重
 
     </LinearLayout>
 </LinearLayout>
