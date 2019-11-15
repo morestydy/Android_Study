@@ -1,54 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <View
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#000000"
-        android:id="@+id/view_1"
-        />
-    <View
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#FF0000"
-        android:id="@+id/view_2"
-        android:layout_below="@+id/view_1"
-        />
-    <LinearLayout
+    <Button
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/ll_1"
-        android:layout_below="@+id/view_2"
-        android:orientation="horizontal"
-        android:background="#0066ff"
-        android:padding="15dp">
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:background="#ff0033"/>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#000000"
-            android:padding="15dp">
-            <View
-                android:id="@+id/view_3"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="#E6941A"/>
-            <View
-                android:id="@+id/view_4"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="#E6941A"
-                android:layout_toRightOf="@+id/view_3"
-                android:layout_marginLeft="10dp"/>
-        </RelativeLayout>
-
-    </LinearLayout>
+        android:id="@+id/btn_textview"
+        android:text="TextView"/>
 
 
-</RelativeLayout>
+</LinearLayout>

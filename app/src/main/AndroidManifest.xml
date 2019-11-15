@@ -10,11 +10,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />//第一个启动activity
-
+                <action android:name="android.intent.action.MAIN" />
+                //第一个启动activity
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TextViewActivity"></activity>
     </application>
 
 </manifest>
