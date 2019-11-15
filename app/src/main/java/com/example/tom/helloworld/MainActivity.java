@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends ActionBarActivity {
 
     private Button mBtnTextView;
+    private Button mBtnButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);//相当于一个入口
@@ -20,6 +21,16 @@ public class MainActivity extends ActionBarActivity {
                 //跳转到TextView演示界面
                 Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
                 startActivity(intent);
+            }
+        });
+        mBtnButton = (Button) findViewById(R.id.btn_button);
+        mBtnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转到button演示界面
+               Intent intent = new Intent(MainActivity.this,ButtonActivity.class);
+                startActivity(intent);
+
             }
         });
     }
