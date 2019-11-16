@@ -8,11 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btn_textview"
-        android:text="TextView"/>
+        android:text="TextView"
+        android:textAllCaps="false"/>
     <Button
         android:id="@+id/btn_button"
         android:text="button"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_edittext"
+        android:text="EditText"
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

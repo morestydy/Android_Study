@@ -10,6 +10,7 @@ public class MainActivity extends ActionBarActivity {
 
     private Button mBtnTextView;
     private Button mBtnButton;
+    private Button mBtnEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);//相当于一个入口
@@ -31,6 +32,15 @@ public class MainActivity extends ActionBarActivity {
                Intent intent = new Intent(MainActivity.this,ButtonActivity.class);
                 startActivity(intent);
 
+            }
+        });
+        mBtnEditText = (Button) findViewById(R.id.btn_edittext);
+        mBtnEditText.setOnClickListener(new View.OnClickListener() {
+            //跳转到EditText演示界面
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,EditTextActivity.class);
+                startActivity(intent);
             }
         });
     }
