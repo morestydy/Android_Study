@@ -11,37 +11,49 @@ public class MainActivity extends ActionBarActivity {
     private Button mBtnTextView;
     private Button mBtnButton;
     private Button mBtnEditText;
+    private Button mBtnRadioButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);//相当于一个入口
         setContentView(R.layout.activity_main);
         mBtnTextView = (Button)findViewById(R.id.btn_textview);
-        mBtnTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //跳转到TextView演示界面
-                Intent intent = new Intent(MainActivity.this,TextViewActivity.class);
-                startActivity(intent);
-            }
-        });
         mBtnButton = (Button) findViewById(R.id.btn_button);
-        mBtnButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //跳转到button演示界面
-               Intent intent = new Intent(MainActivity.this,ButtonActivity.class);
-                startActivity(intent);
-
-            }
-        });
         mBtnEditText = (Button) findViewById(R.id.btn_edittext);
-        mBtnEditText.setOnClickListener(new View.OnClickListener() {
-            //跳转到EditText演示界面
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,EditTextActivity.class);
-                startActivity(intent);
+        mBtnRadioButton =(Button)findViewById(R.id.btn_RadioButton);
+        setListeners();
+    }
+
+    private void setListeners(){
+        Onclick onclick = new Onclick();
+        mBtnTextView.setOnClickListener(onclick);
+        mBtnButton.setOnClickListener(onclick);
+        mBtnEditText.setOnClickListener(onclick);
+        mBtnRadioButton.setOnClickListener(onclick);
+    }
+    private class Onclick implements View.OnClickListener{
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = null;
+            switch (view.getId()){
+                case R.id.btn_textview:
+                    //跳转到textview演示界面
+                    intent = new Intent(MainActivity.this,TextViewActivity.class);
+                    break;
+                case R.id.btn_button:
+                    //跳转到Button演示界面
+                    intent = new Intent(MainActivity.this,ButtonActivity.class);
+                    break;
+                case R.id.btn_edittext:
+                    //跳转到edittext演示界面
+                    intent = new Intent(MainActivity.this,EditTextActivity.class);
+                    break;
+                case R.id.btn_RadioButton:
+                    //跳转到RadioButton演示界面
+                    intent = new Intent(MainActivity.this,RadioButtonActivity.class);
+                    break;
             }
-        });
+            startActivity(intent);
+        }
     }
 }
