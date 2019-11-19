@@ -12,6 +12,7 @@ public class MainActivity extends ActionBarActivity {
     private Button mBtnButton;
     private Button mBtnEditText;
     private Button mBtnRadioButton;
+    private Button mBtnChechBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);//相当于一个入口
@@ -20,6 +21,7 @@ public class MainActivity extends ActionBarActivity {
         mBtnButton = (Button) findViewById(R.id.btn_button);
         mBtnEditText = (Button) findViewById(R.id.btn_edittext);
         mBtnRadioButton =(Button)findViewById(R.id.btn_RadioButton);
+        mBtnChechBox = (Button) findViewById(R.id.btn__checkbox);
         setListeners();
     }
 
@@ -29,6 +31,7 @@ public class MainActivity extends ActionBarActivity {
         mBtnButton.setOnClickListener(onclick);
         mBtnEditText.setOnClickListener(onclick);
         mBtnRadioButton.setOnClickListener(onclick);
+        mBtnChechBox.setOnClickListener(onclick);
     }
     private class Onclick implements View.OnClickListener{
 
@@ -51,6 +54,10 @@ public class MainActivity extends ActionBarActivity {
                 case R.id.btn_RadioButton:
                     //跳转到RadioButton演示界面
                     intent = new Intent(MainActivity.this,RadioButtonActivity.class);
+                    break;
+                case R.id.btn__checkbox:
+                    //跳转到CheckBox界面
+                    intent = new Intent(MainActivity.this,CheckBoxActivity.class);
                     break;
             }
             startActivity(intent);

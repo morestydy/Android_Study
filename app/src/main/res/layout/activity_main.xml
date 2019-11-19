@@ -28,4 +28,10 @@
         android:layout_height="wrap_content"
         android:text="RadioButton"
         android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn__checkbox"
+        android:layout_width="match_parent"
+        android:text="CheckBox"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"/>
 </LinearLayout>
