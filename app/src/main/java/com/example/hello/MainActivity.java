@@ -9,6 +9,8 @@ import android.view.View;
 import android.content.Intent;
 import android.widget.Button;
 
+import com.example.hello.listview.ListViewActivity;
+
 public class MainActivity extends AppCompatActivity {
     private Button mBtnTextView;
     private Button mBtnButton;
@@ -16,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnRadioButton;
     private Button mBtnChechBox;
     private Button mBtnImageView;
+    private Button mBtnListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_main);
         mBtnTextView = (Button)findViewById(R.id.btn_textview);
         mBtnButton = (Button) findViewById(R.id.btn_button);
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnRadioButton =(Button)findViewById(R.id.btn_RadioButton);
         mBtnChechBox = (Button) findViewById(R.id.btn__checkbox);
         mBtnImageView = (Button) findViewById(R.id.btn_imageview);
+        mBtnListView = (Button) findViewById(R.id.btn_listview);
         setListeners();
     }
     private void setListeners(){
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnRadioButton.setOnClickListener(onclick);
         mBtnChechBox.setOnClickListener(onclick);
         mBtnImageView.setOnClickListener(onclick);
+        mBtnListView.setOnClickListener(onclick);
     }
     private class Onclick implements View.OnClickListener{
 
@@ -67,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_imageview:
                     //跳转到ImageView
                     intent = new Intent(MainActivity.this, ImageViewActivity.class);
+                    break;
+                case R.id.btn_listview:
+                    //跳转到ListView界面
+                    intent = new Intent(MainActivity.this, ListViewActivity.class);
                     break;
             }
             startActivity(intent);
