@@ -2,16 +2,14 @@ package com.example.hello;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
-import android.widget.Button;
-import android.widget.GridView;
 
 import com.example.hello.gridview.GridViewActivity;
 import com.example.hello.listview.ListViewActivity;
+import com.example.hello.recyclerview.RecyclerViewActivity;
 
 public class MainActivity extends AppCompatActivity {
     private Button mBtnTextView;
@@ -22,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button mBtnImageView;
     private Button mBtnListView;
     private Button mBtnGridView;
+    private Button mBtnRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnImageView = (Button) findViewById(R.id.btn_imageview);
         mBtnListView = (Button) findViewById(R.id.btn_listview);
         mBtnGridView = (Button) findViewById(R.id.btn_gridview);
+        mBtnRecyclerView = findViewById(R.id.btn_recyclerview);
         setListeners();
     }
     private void setListeners(){
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mBtnImageView.setOnClickListener(onclick);
         mBtnListView.setOnClickListener(onclick);
         mBtnGridView.setOnClickListener(onclick);
+        mBtnRecyclerView.setOnClickListener(onclick);
     }
     private class Onclick implements View.OnClickListener{
 
@@ -84,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.btn_gridview:
                     //跳转到GridView演示界面
                     intent = new Intent(MainActivity.this, GridViewActivity.class);
+                    break;
+                case R.id.btn_recyclerview:
+                    //跳转到RecyclerView演示界面
+                    intent = new Intent(MainActivity.this, RecyclerViewActivity.class);
                     break;
             }
             startActivity(intent);
